@@ -57,34 +57,34 @@ export const projects: Project[] = [
     summary:
       "Un listening bar confidentiel à Paris. L'enjeu : faire ressentir l'atmosphère du lieu en ligne, avant même d'y entrer.",
     liveUrl: "https://www.noahifi.com/",
-    image: "/travaux/noa-hifi/hero.png",
+    image: "/travaux/noa-hifi/hero.jpg",
     gallery: [
       {
-        src: "/travaux/noa-hifi/manifesto.png",
+        src: "/travaux/noa-hifi/manifesto.jpg",
         caption: "Manifesto — l'histoire et la philosophie du lieu",
       },
       {
-        src: "/travaux/noa-hifi/rituals.png",
+        src: "/travaux/noa-hifi/rituals.jpg",
         caption: "Three rituals — Sound, Taste, Design",
       },
       {
-        src: "/travaux/noa-hifi/amplifier-detail.png",
+        src: "/travaux/noa-hifi/amplifier-detail.jpg",
         caption: "Détail — amplificateur McIntosh et vinylothèque",
       },
       {
-        src: "/travaux/noa-hifi/space.png",
+        src: "/travaux/noa-hifi/space.jpg",
         caption: "The Space — l'espace sculpté par le son",
       },
       {
-        src: "/travaux/noa-hifi/now-playing.png",
+        src: "/travaux/noa-hifi/now-playing.jpg",
         caption: "Now Playing — platine animée et playlist en direct",
       },
       {
-        src: "/travaux/noa-hifi/liquid-art.png",
+        src: "/travaux/noa-hifi/liquid-art.jpg",
         caption: "Liquid Art — la carte de cocktails",
       },
       {
-        src: "/travaux/noa-hifi/reserve.png",
+        src: "/travaux/noa-hifi/reserve.jpg",
         caption: "Reserve — réservation confidentielle",
       },
     ],
