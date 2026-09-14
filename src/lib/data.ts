@@ -2,6 +2,7 @@ export const site = {
   name: "Rym Dhaouadi",
   role: "Webdesign & UX/UI Design",
   tagline: "Digital experiences for places with an identity.",
+  location: "Paris · Málaga · Remote",
   // TODO: remplacer par les vraies coordonnées avant mise en ligne.
   email: "hello@rymdhaouadi.com",
   instagram: {
@@ -27,13 +28,13 @@ export type Project = {
   summary: string;
   liveUrl?: string;
   image?: string;
-  featured: boolean;
+  mobileImage?: string;
   caseStudy?: {
+    tagline: string;
     context: string;
-    objective: string;
+    challenge: string;
     approach: string[];
     direction: string;
-    ui: string[];
     result: string;
   };
 };
@@ -42,53 +43,65 @@ export const projects: Project[] = [
   {
     slug: "noa-hifi",
     client: "NOA HIFI",
-    title: "NOA HIFI — Listening bar, Paris",
-    category: "Webdesign · UX/UI · Direction digitale",
+    title: "NOA HIFI — Hi-Fi Speakeasy, Paris",
+    category: "Webdesign · UX/UI · Expérience digitale",
     year: "2025",
     summary:
       "Un bar hi-fi et musical à Paris, pensé comme un listening bar intimiste. L'enjeu : faire ressentir l'atmosphère du lieu en ligne, avant même d'y entrer.",
     liveUrl: "https://www.noahifi.com/",
-    featured: true,
     caseStudy: {
+      tagline: "Hi-Fi Speakeasy — Paris",
       context:
-        "NOA HIFI est un bar parisien construit autour de la culture Hi-Fi, de la musique et de l'expérience d'écoute. Le lieu a une identité déjà forte et affirmée, portée par l'univers du client. Ma mission : la traduire en une expérience digitale qui lui soit fidèle.",
-      objective:
-        "Créer un site qui ne se contente pas de présenter le bar, mais qui donne à ressentir son atmosphère intimiste et premium dès l'arrivée sur la page — pour donner envie de vivre l'expérience sur place.",
+        "NOA HIFI est un bar parisien construit autour de la culture Hi-Fi, de la musique et de l'expérience d'écoute. Le lieu avait déjà son univers, ses idées et ses contenus : mon rôle a été de concevoir et réaliser le site à partir de cette matière, pas de créer la marque.",
+      challenge:
+        "Comment retranscrire l'atmosphère et l'identité d'un listening bar dans une expérience web, sans la trahir ni la diluer dans un site générique ?",
       approach: [
         "Analyse de l'univers, des contenus et des photos fournis par le client",
-        "Construction d'une arborescence simple, centrée sur l'essentiel : l'ambiance, l'offre, la localisation",
-        "Priorité donnée à l'image et au rythme de lecture plutôt qu'au texte",
+        "Arborescence resserrée sur l'essentiel : l'ambiance, l'offre, la localisation",
+        "Hiérarchie et navigation pensées pour un rythme de lecture lent, immersif",
+        "Interface et interactions sobres, au service de l'image plutôt que du texte",
+        "Intégration complète des contenus et adaptation responsive (mobile, tablette, desktop)",
       ],
       direction:
         "Une direction visuelle sombre et feutrée, proche de l'esthétique d'un listening bar : grands visuels, typographie sobre, mise en page aérée pour laisser respirer les photos du lieu.",
-      ui: [
-        "Structure et mise en page du site",
-        "Expérience utilisateur et hiérarchie du contenu",
-        "Interface et interactions",
-        "Intégration des contenus fournis par le client",
-        "Adaptation responsive complète (mobile, tablette, desktop)",
-      ],
       result:
         "Le site a été conçu et réalisé en environ une semaine, de la structure à la mise en ligne.",
     },
   },
+];
+
+export type Concept = {
+  slug: string;
+  name: string;
+  category: string;
+  description: string;
+  tone: "ink" | "accent" | "paper-dim";
+};
+
+export const concepts: Concept[] = [
   {
-    slug: "prochainement-1",
-    client: "Prochainement",
-    title: "Un nouveau projet arrive bientôt",
-    category: "Restaurant / Bar",
-    year: "—",
-    summary: "Cet emplacement est réservé pour une prochaine étude de cas.",
-    featured: false,
+    slug: "meridian",
+    name: "MERIDIAN",
+    category: "Restaurant contemporain",
+    description:
+      "Direction visuelle pour un restaurant gastronomique épuré : typographie éditoriale, grands aplats, mise en scène du menu comme une collection.",
+    tone: "ink",
   },
   {
-    slug: "prochainement-2",
-    client: "Prochainement",
-    title: "Un nouveau projet arrive bientôt",
-    category: "Hôtel / Lieu culturel",
-    year: "—",
-    summary: "Cet emplacement est réservé pour une prochaine étude de cas.",
-    featured: false,
+    slug: "noir-cabinet",
+    name: "NOIR CABINET",
+    category: "Cocktail bar",
+    description:
+      "Univers sombre et confidentiel pour un cocktail bar : ambiance feutrée, typographie ciselée, expérience pensée comme une invitation.",
+    tone: "accent",
+  },
+  {
+    slug: "cala",
+    name: "CALA",
+    category: "Boutique hôtel",
+    description:
+      "Identité digitale chaleureuse pour un boutique hôtel méditerranéen : matières, lumière naturelle, narration au rythme des saisons.",
+    tone: "paper-dim",
   },
 ];
 
@@ -97,30 +110,25 @@ export const services = [
     number: "01",
     title: "Webdesign",
     description:
-      "Conception visuelle complète d'un site, cohérente avec l'identité du lieu ou de la marque.",
+      "Des sites pensés autour de votre identité, votre audience et l'expérience que vous voulez faire vivre.",
   },
   {
     number: "02",
-    title: "UX/UI Design",
+    title: "UX/UI",
     description:
-      "Structure, parcours utilisateur et interfaces pensés pour convertir la visite en action.",
+      "Des expériences digitales claires, intuitives et visuellement distinctives.",
   },
   {
     number: "03",
-    title: "Création de sites",
-    description: "Réalisation de sites sur mesure, du concept à la mise en ligne.",
+    title: "Refonte de site",
+    description:
+      "Transformer un site daté en une expérience moderne et immersive.",
   },
   {
     number: "04",
-    title: "Refonte de sites",
+    title: "Expérience digitale",
     description:
-      "Modernisation d'un site existant : design, expérience et performance.",
-  },
-  {
-    number: "05",
-    title: "Direction visuelle digitale",
-    description:
-      "Cohérence de l'univers visuel d'une marque à travers ses supports digitaux.",
+      "De la structure à la direction visuelle jusqu'à la réalisation finale.",
   },
 ];
 
@@ -128,34 +136,33 @@ export const process = [
   {
     number: "01",
     title: "Discovery",
-    description: "Comprendre le lieu, la marque et ses objectifs.",
+    description: "Comprendre le lieu, l'identité et les objectifs.",
   },
   {
     number: "02",
     title: "Direction",
-    description: "Définir l'univers visuel et la direction artistique.",
+    description: "Structure, parcours utilisateur et direction digitale.",
   },
   {
     number: "03",
-    title: "UX/UI",
-    description: "Structurer l'expérience et concevoir l'interface.",
+    title: "Design",
+    description: "UX/UI, langage visuel et mises en page responsives.",
   },
   {
     number: "04",
-    title: "Development",
-    description: "Développer un site propre, rapide et responsive.",
+    title: "Développement",
+    description: "Développement, interactions, optimisation et mise en ligne.",
   },
   {
     number: "05",
-    title: "Launch",
-    description: "Mettre en ligne et accompagner le lancement.",
+    title: "Finalisation",
+    description: "Derniers ajustements et livraison.",
   },
 ];
 
 export const nav = [
   { label: "Travaux", href: "#travaux" },
   { label: "Services", href: "#services" },
-  { label: "Process", href: "#process" },
   { label: "À propos", href: "#about" },
   { label: "Contact", href: "#contact" },
 ];

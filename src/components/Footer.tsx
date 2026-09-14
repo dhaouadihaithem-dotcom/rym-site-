@@ -7,30 +7,29 @@ export default function Footer() {
         <div>
           <p className="font-serif text-xl tracking-tight">{site.name}</p>
           <p className="mt-1 text-sm text-paper/60">{site.role}</p>
+          <p className="mt-1 text-sm text-paper/60">{site.location}</p>
         </div>
 
-        <div className="flex flex-col gap-2 text-sm sm:items-end">
-          <a href={`mailto:${site.email}`} className="text-paper/80 hover:text-paper">
-            {site.email}
+        <div className="flex gap-5 text-sm sm:items-end">
+          <a href="#contact" className="text-paper/80 hover:text-paper">
+            Contact
           </a>
-          <div className="flex gap-5">
-            <a
-              href={site.instagram.href}
-              target="_blank"
-              rel="noreferrer"
-              className="text-paper/80 hover:text-paper"
-            >
-              {site.instagram.label}
-            </a>
-            <a
-              href={site.linkedin.href}
-              target="_blank"
-              rel="noreferrer"
-              className="text-paper/80 hover:text-paper"
-            >
-              {site.linkedin.label}
-            </a>
-          </div>
+          <a
+            href={site.instagram.href}
+            target="_blank"
+            rel="noreferrer"
+            className="text-paper/80 hover:text-paper"
+          >
+            {site.instagram.label}
+          </a>
+          <a
+            href={site.linkedin.href}
+            target="_blank"
+            rel="noreferrer"
+            className="text-paper/80 hover:text-paper"
+          >
+            {site.linkedin.label}
+          </a>
         </div>
       </div>
       <p className="pt-2 text-xs text-paper/40">

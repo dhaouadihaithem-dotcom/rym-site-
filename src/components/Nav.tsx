@@ -19,7 +19,7 @@ export default function Nav() {
       <header className="fixed inset-x-0 top-0 z-50 flex items-center justify-between bg-paper/75 px-6 py-5 backdrop-blur-md sm:px-10 lg:px-14">
         <a
           href="#top"
-          className="font-serif text-lg tracking-tight text-ink"
+          className="font-serif text-lg tracking-tight text-ink uppercase"
           onClick={() => setOpen(false)}
         >
           {site.name}
@@ -39,7 +39,7 @@ export default function Nav() {
             href="#contact"
             className="rounded-full border border-ink px-5 py-2 text-sm transition-colors hover:bg-ink hover:text-paper"
           >
-            Parlons-en
+            Démarrer un projet
           </a>
         </nav>
 
@@ -91,7 +91,7 @@ export default function Nav() {
               transition={{ delay: 0.05 * nav.length, duration: 0.4 }}
               className="mt-4 inline-flex w-fit rounded-full border border-ink px-6 py-3 text-base"
             >
-              Parlons-en
+              Démarrer un projet
             </motion.a>
           </motion.div>
         )}
