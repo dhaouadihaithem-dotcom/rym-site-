@@ -63,13 +63,17 @@ export default async function ProjectPage({
   }
 
   const { caseStudy } = project;
+  const gallery = project.gallery ?? [];
+  const mobileShots = project.mobileGallery ?? (
+    project.mobileImage ? [{ src: project.mobileImage, caption: project.client }] : []
+  );
 
   return (
     <>
       <Nav />
       <main>
         {/* Intro */}
-        <section className="px-6 pt-32 pb-16 sm:px-10 sm:pt-40 lg:px-14">
+        <section className="px-6 pt-32 pb-12 sm:px-10 sm:pt-40 lg:px-14">
           <Reveal>
             <p className="text-sm tracking-[0.2em] text-ink-soft uppercase">
               {caseStudy.tagline}
@@ -81,6 +85,7 @@ export default async function ProjectPage({
           </Reveal>
         </section>
 
+        {/* Hero visual */}
         <Reveal>
           <div className="px-6 sm:px-10 lg:px-14">
             <ProjectVisual
@@ -90,89 +95,110 @@ export default async function ProjectPage({
           </div>
         </Reveal>
 
-        <div className="mx-auto flex max-w-3xl flex-col gap-24 px-6 py-24 sm:px-10 sm:py-32">
-          {/* Context */}
+        {/* Visual direction — gallery */}
+        <section className="px-6 py-16 sm:px-10 sm:py-24 lg:px-14">
           <Reveal>
-            <h2 className="mb-4 font-serif text-2xl tracking-tight text-accent">
-              Contexte
-            </h2>
-            <p className="text-lg text-ink-soft">{caseStudy.context}</p>
-          </Reveal>
-
-          {/* The challenge */}
-          <Reveal>
-            <h2 className="mb-4 font-serif text-2xl tracking-tight text-accent">
-              Le défi
-            </h2>
-            <p className="text-lg text-ink-soft">{caseStudy.challenge}</p>
-          </Reveal>
-
-          {/* My approach */}
-          <Reveal>
-            <h2 className="mb-4 font-serif text-2xl tracking-tight text-accent">
-              Mon approche
-            </h2>
-            <ul className="flex flex-col gap-3">
-              {caseStudy.approach.map((item) => (
-                <li
-                  key={item}
-                  className="border-l-2 border-accent/30 pl-4 text-lg text-ink-soft"
-                >
-                  {item}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
-        </div>
-
-        {/* Visual direction */}
-        <section className="px-6 sm:px-10 lg:px-14">
-          <Reveal>
-            <p className="mb-6 text-sm tracking-[0.2em] text-ink-soft uppercase">
+            <p className="mb-8 text-sm tracking-[0.2em] text-ink-soft uppercase">
               Direction visuelle
             </p>
           </Reveal>
-          <Reveal delay={0.05}>
-            <p className="mb-8 max-w-2xl text-lg text-ink-soft">
-              {caseStudy.direction}
-            </p>
-          </Reveal>
-          <Reveal delay={0.1}>
-            <ProjectVisual
-              project={project}
-              className="aspect-[4/3] sm:aspect-[16/9]"
-            />
-          </Reveal>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {(gallery.length > 0
+              ? gallery
+              : [0, 1].map((i) => ({ src: "", caption: `${project.client} ${i + 1}` }))
+            ).map((item, i) => (
+              <Reveal key={item.src || item.caption} delay={i * 0.06}>
+                <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink">
+                  {item.src ? (
+                    <Image
+                      src={item.src}
+                      alt={item.caption}
+                      fill
+                      className="object-cover"
+                      sizes="(min-width: 1024px) 600px, 100vw"
+                    />
+                  ) : (
+                    <div className="flex h-full w-full items-center justify-center">
+                      <p className="font-serif text-2xl italic text-paper/70">
+                        {project.client}
+                      </p>
+                    </div>
+                  )}
+                </div>
+                <p className="mt-2 text-xs text-ink-soft">{item.caption}</p>
+              </Reveal>
+            ))}
+          </div>
         </section>
 
         {/* Mobile experience */}
-        <section className="px-6 py-24 sm:px-10 sm:py-32 lg:px-14">
+        <section className="px-6 py-16 sm:px-10 sm:py-24 lg:px-14">
           <Reveal>
             <p className="mb-10 text-center text-sm tracking-[0.2em] text-ink-soft uppercase">
               Expérience mobile
             </p>
           </Reveal>
-          <Reveal delay={0.05}>
-            <div className="mx-auto w-full max-w-[280px] overflow-hidden rounded-[2rem] border border-ink/15 bg-ink shadow-sm">
-              {project.mobileImage ? (
-                <div className="relative aspect-[9/19.5] w-full">
-                  <Image
-                    src={project.mobileImage}
-                    alt={`${project.title} — version mobile`}
-                    fill
-                    className="object-cover"
-                    sizes="280px"
-                  />
+          <div className="flex flex-wrap justify-center gap-6">
+            {(mobileShots.length > 0
+              ? mobileShots
+              : [{ src: "", caption: project.client }]
+            ).map((shot, i) => (
+              <Reveal key={shot.src || i} delay={i * 0.08}>
+                <div className="w-[220px] overflow-hidden rounded-[1.75rem] border border-ink/15 bg-ink shadow-sm">
+                  {shot.src ? (
+                    <div className="relative aspect-[9/19.5] w-full">
+                      <Image
+                        src={shot.src}
+                        alt={shot.caption}
+                        fill
+                        className="object-cover"
+                        sizes="220px"
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex aspect-[9/19.5] w-full items-center justify-center">
+                      <p className="font-serif text-base italic text-paper/70">
+                        {project.client}
+                      </p>
+                    </div>
+                  )}
                 </div>
-              ) : (
-                <div className="flex aspect-[9/19.5] w-full items-center justify-center">
-                  <p className="font-serif text-lg italic text-paper/70">
-                    {project.client}
-                  </p>
-                </div>
-              )}
-            </div>
-          </Reveal>
+              </Reveal>
+            ))}
+          </div>
+        </section>
+
+        {/* Short explanations */}
+        <section className="mx-auto max-w-5xl px-6 py-16 sm:px-10 sm:py-24">
+          <div className="grid gap-10 sm:grid-cols-3">
+            <Reveal>
+              <h2 className="mb-3 font-serif text-xl tracking-tight text-accent">
+                Contexte
+              </h2>
+              <p className="text-ink-soft">{caseStudy.context}</p>
+            </Reveal>
+            <Reveal delay={0.05}>
+              <h2 className="mb-3 font-serif text-xl tracking-tight text-accent">
+                Le défi
+              </h2>
+              <p className="text-ink-soft">{caseStudy.challenge}</p>
+            </Reveal>
+            <Reveal delay={0.1}>
+              <h2 className="mb-3 font-serif text-xl tracking-tight text-accent">
+                Mon approche
+              </h2>
+              <ul className="flex flex-col gap-2">
+                {caseStudy.approach.map((item) => (
+                  <li
+                    key={item}
+                    className="border-l-2 border-accent/30 pl-3 text-sm text-ink-soft"
+                  >
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
         </section>
 
         {/* Final result */}

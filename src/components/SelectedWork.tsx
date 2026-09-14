@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import Reveal from "./Reveal";
 import ProjectVisual from "./ProjectVisual";
@@ -5,16 +6,18 @@ import { projects } from "@/lib/data";
 
 export default function SelectedWork() {
   const [featured] = projects;
+  const thumbnails = featured.gallery?.slice(0, 3) ?? [];
 
   return (
     <section id="travaux" className="px-6 pt-28 sm:px-10 sm:pt-36 lg:px-14">
       <Reveal>
         <div className="mb-14 flex items-end justify-between sm:mb-20">
           <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">
-            Selected Work
+            Travaux sélectionnés
           </h2>
           <span className="hidden max-w-xs text-right text-sm text-ink-soft sm:block">
-            Une sélection d&apos;expériences digitales et de concepts.
+            Une expérience digitale réelle, et quelques directions
+            artistiques explorées à titre personnel.
           </span>
         </div>
       </Reveal>
@@ -39,6 +42,27 @@ export default function SelectedWork() {
           </span>
         </Link>
       </Reveal>
+
+      {thumbnails.length > 0 && (
+        <Reveal delay={0.1}>
+          <div className="mt-8 grid grid-cols-3 gap-3">
+            {thumbnails.map((item) => (
+              <div
+                key={item.src}
+                className="relative aspect-[4/3] overflow-hidden bg-ink"
+              >
+                <Image
+                  src={item.src}
+                  alt={item.caption}
+                  fill
+                  className="object-cover"
+                  sizes="(min-width: 1024px) 380px, 33vw"
+                />
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      )}
     </section>
   );
 }

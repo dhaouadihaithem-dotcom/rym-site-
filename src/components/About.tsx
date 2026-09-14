@@ -41,6 +41,11 @@ export default function About() {
             l&apos;univers du lieu ou de la marque pour concevoir un site qui
             lui ressemble vraiment, plutôt qu&apos;un template générique.
           </p>
+          <p className="max-w-lg text-ink-soft">
+            Ce qui m&apos;intéresse : les lieux qui ont une ambiance, une
+            histoire, un vrai parti pris — et où le design ne se contente pas
+            d&apos;être joli, mais sert l&apos;expérience.
+          </p>
         </Reveal>
       </div>
     </section>

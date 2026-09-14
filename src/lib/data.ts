@@ -1,7 +1,6 @@
 export const site = {
   name: "Rym Dhaouadi",
   role: "Webdesign & UX/UI Design",
-  tagline: "Digital experiences for places with an identity.",
   location: "Paris · Málaga · Remote",
   // TODO: remplacer par les vraies coordonnées avant mise en ligne.
   email: "hello@rymdhaouadi.com",
@@ -19,6 +18,11 @@ export const site = {
   photo: undefined as string | undefined,
 };
 
+export type GalleryItem = {
+  src: string;
+  caption: string;
+};
+
 export type Project = {
   slug: string;
   client: string;
@@ -28,7 +32,11 @@ export type Project = {
   summary: string;
   liveUrl?: string;
   image?: string;
+  // Visuels supplémentaires (desktop) pour la case study — voir README pour
+  // comment les ajouter.
+  gallery?: GalleryItem[];
   mobileImage?: string;
+  mobileGallery?: GalleryItem[];
   caseStudy?: {
     tagline: string;
     context: string;
@@ -47,62 +55,66 @@ export const projects: Project[] = [
     category: "Webdesign · UX/UI · Expérience digitale",
     year: "2025",
     summary:
-      "Un bar hi-fi et musical à Paris, pensé comme un listening bar intimiste. L'enjeu : faire ressentir l'atmosphère du lieu en ligne, avant même d'y entrer.",
+      "Un listening bar confidentiel à Paris. L'enjeu : faire ressentir l'atmosphère du lieu en ligne, avant même d'y entrer.",
     liveUrl: "https://www.noahifi.com/",
     caseStudy: {
       tagline: "Hi-Fi Speakeasy — Paris",
       context:
-        "NOA HIFI est un listening bar confidentiel à Bastille, né de la rencontre entre la philosophie des jazz kissa japonais et l'exigence de la haute couture parisienne : amplificateurs McIntosh, vinylothèque de plus de 800 références, cocktails signature. Le lieu avait déjà son univers, ses idées et ses contenus : mon rôle a été de concevoir et réaliser le site à partir de cette matière, pas de créer la marque.",
+        "NOA HIFI est un listening bar confidentiel à Bastille : amplificateurs McIntosh, vinylothèque de plus de 800 références, cocktails signature. Le lieu avait déjà son univers et ses contenus — j'ai conçu et réalisé le site à partir de cette matière, pas la marque.",
       challenge:
-        "Comment retranscrire l'atmosphère confidentielle d'un listening bar — le son, la matière, le rituel de la réservation — dans une expérience web, sans la trahir ni la diluer dans un site générique ?",
+        "Retranscrire l'atmosphère confidentielle d'un listening bar dans une expérience web, sans la diluer dans un site générique.",
       approach: [
-        "Structuration du site en cinq temps forts : Manifesto, The Space, Now Playing, Liquid Art, Reserve",
-        "Un hero d'ouverture confidentiel (« Behind closed doors ») qui installe le ton de speakeasy avant même la home",
-        "Une section Manifesto pour poser l'histoire et la philosophie du lieu",
-        "Une section « Three rituals, one night » qui structure l'offre en trois piliers : Sound, Taste, Design",
-        "Un module « Now Playing » avec platine animée et playlist Tidal pour donner à entendre l'ambiance en direct",
-        "Un parcours de réservation confidentiel (« Request your invitation ») plutôt qu'un simple formulaire de contact",
+        "Site structuré en cinq temps forts : Manifesto, The Space, Now Playing, Liquid Art, Reserve",
+        "Hero d'ouverture confidentiel (« Behind closed doors ») qui installe le ton dès l'arrivée",
+        "Module « Now Playing » avec platine animée et playlist en direct",
+        "Parcours de réservation confidentiel plutôt qu'un simple formulaire de contact",
       ],
       direction:
-        "Une direction visuelle sombre et feutrée, sculptée par la lumière : grandes photos argentiques du bar et des amplificateurs McIntosh, typographie serif élégante, mise en page aérée pour laisser respirer l'espace et le rituel du lieu.",
+        "Sombre et feutrée, sculptée par la lumière : grandes photos argentiques, typographie serif élégante, mise en page aérée.",
       result:
-        "Le site a été conçu et réalisé en environ une semaine, de la structure à la mise en ligne — en retranscrivant fidèlement l'expérience sensorielle du lieu avant même d'y entrer.",
+        "Conçu et réalisé en environ une semaine, de la structure à la mise en ligne.",
     },
   },
 ];
+
+export type ConceptTone = "ink" | "accent" | "paper-dim";
 
 export type Concept = {
   slug: string;
   name: string;
   category: string;
   description: string;
-  tone: "ink" | "accent" | "paper-dim";
+  tone: ConceptTone;
+  mockup: "restaurant" | "bar" | "hotel";
 };
 
 export const concepts: Concept[] = [
   {
     slug: "meridian",
-    name: "MERIDIAN",
+    name: "Meridian",
     category: "Restaurant contemporain",
     description:
-      "Direction visuelle pour un restaurant gastronomique épuré : typographie éditoriale, grands aplats, mise en scène du menu comme une collection.",
-    tone: "ink",
+      "Typographie éditoriale, grands aplats, menu mis en scène comme une collection.",
+    tone: "paper-dim",
+    mockup: "restaurant",
   },
   {
     slug: "noir-cabinet",
-    name: "NOIR CABINET",
+    name: "Noir Cabinet",
     category: "Cocktail bar",
     description:
-      "Univers sombre et confidentiel pour un cocktail bar : ambiance feutrée, typographie ciselée, expérience pensée comme une invitation.",
-    tone: "accent",
+      "Univers sombre et confidentiel, typographie ciselée, carte pensée comme une invitation.",
+    tone: "ink",
+    mockup: "bar",
   },
   {
     slug: "cala",
-    name: "CALA",
+    name: "Cala",
     category: "Boutique hôtel",
     description:
-      "Identité digitale chaleureuse pour un boutique hôtel méditerranéen : matières, lumière naturelle, narration au rythme des saisons.",
-    tone: "paper-dim",
+      "Identité chaleureuse pour un boutique hôtel méditerranéen : matières, lumière, saisons.",
+    tone: "accent",
+    mockup: "hotel",
   },
 ];
 

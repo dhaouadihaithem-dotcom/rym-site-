@@ -8,13 +8,13 @@ export default function SelectedConcepts() {
       <Reveal>
         <div className="mb-4 flex items-baseline gap-3">
           <h2 className="font-serif text-3xl tracking-tight sm:text-4xl">
-            Selected Concepts
+            Concepts sélectionnés
           </h2>
         </div>
         <p className="mb-14 max-w-xl text-ink-soft sm:mb-20">
           Des directions artistiques indépendantes, pensées pour explorer
-          différents univers — présentées comme des concepts, pas comme des
-          projets clients.
+          différents univers — présentées comme des concepts, jamais comme
+          des projets clients.
         </p>
       </Reveal>
 

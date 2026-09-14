@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 
-const title = "Digital experiences for places with an identity.";
+const title = "Je transforme l'identité de votre lieu en expérience digitale.";
 
 export default function Hero() {
   const words = title.split(" ");
@@ -22,7 +22,7 @@ export default function Hero() {
           Rym Dhaouadi — Webdesign / UX-UI
         </motion.p>
 
-        <h1 className="max-w-5xl font-serif text-[2.6rem] leading-[1.05] tracking-tight text-ink sm:text-6xl lg:text-[5.5rem]">
+        <h1 className="max-w-4xl font-serif text-[2.3rem] leading-[1.08] tracking-tight text-ink sm:text-5xl lg:text-[4.3rem]">
           {words.map((word, i) => (
             <motion.span
               key={i}
@@ -46,9 +46,8 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.7 }}
           className="max-w-md text-base text-ink-soft sm:text-lg"
         >
-          Je conçois et développe des sites sur mesure pour les
-          restaurants, bars, hôtels et marques lifestyle qui ont déjà un
-          univers fort.
+          Sites sur mesure pour restaurants, bars, hôtels et lieux
+          lifestyle en France et en Espagne.
         </motion.p>
       </div>
 
