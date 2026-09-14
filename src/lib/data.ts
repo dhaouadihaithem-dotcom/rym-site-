@@ -52,20 +52,21 @@ export const projects: Project[] = [
     caseStudy: {
       tagline: "Hi-Fi Speakeasy — Paris",
       context:
-        "NOA HIFI est un bar parisien construit autour de la culture Hi-Fi, de la musique et de l'expérience d'écoute. Le lieu avait déjà son univers, ses idées et ses contenus : mon rôle a été de concevoir et réaliser le site à partir de cette matière, pas de créer la marque.",
+        "NOA HIFI est un listening bar confidentiel à Bastille, né de la rencontre entre la philosophie des jazz kissa japonais et l'exigence de la haute couture parisienne : amplificateurs McIntosh, vinylothèque de plus de 800 références, cocktails signature. Le lieu avait déjà son univers, ses idées et ses contenus : mon rôle a été de concevoir et réaliser le site à partir de cette matière, pas de créer la marque.",
       challenge:
-        "Comment retranscrire l'atmosphère et l'identité d'un listening bar dans une expérience web, sans la trahir ni la diluer dans un site générique ?",
+        "Comment retranscrire l'atmosphère confidentielle d'un listening bar — le son, la matière, le rituel de la réservation — dans une expérience web, sans la trahir ni la diluer dans un site générique ?",
       approach: [
-        "Analyse de l'univers, des contenus et des photos fournis par le client",
-        "Arborescence resserrée sur l'essentiel : l'ambiance, l'offre, la localisation",
-        "Hiérarchie et navigation pensées pour un rythme de lecture lent, immersif",
-        "Interface et interactions sobres, au service de l'image plutôt que du texte",
-        "Intégration complète des contenus et adaptation responsive (mobile, tablette, desktop)",
+        "Structuration du site en cinq temps forts : Manifesto, The Space, Now Playing, Liquid Art, Reserve",
+        "Un hero d'ouverture confidentiel (« Behind closed doors ») qui installe le ton de speakeasy avant même la home",
+        "Une section Manifesto pour poser l'histoire et la philosophie du lieu",
+        "Une section « Three rituals, one night » qui structure l'offre en trois piliers : Sound, Taste, Design",
+        "Un module « Now Playing » avec platine animée et playlist Tidal pour donner à entendre l'ambiance en direct",
+        "Un parcours de réservation confidentiel (« Request your invitation ») plutôt qu'un simple formulaire de contact",
       ],
       direction:
-        "Une direction visuelle sombre et feutrée, proche de l'esthétique d'un listening bar : grands visuels, typographie sobre, mise en page aérée pour laisser respirer les photos du lieu.",
+        "Une direction visuelle sombre et feutrée, sculptée par la lumière : grandes photos argentiques du bar et des amplificateurs McIntosh, typographie serif élégante, mise en page aérée pour laisser respirer l'espace et le rituel du lieu.",
       result:
-        "Le site a été conçu et réalisé en environ une semaine, de la structure à la mise en ligne.",
+        "Le site a été conçu et réalisé en environ une semaine, de la structure à la mise en ligne — en retranscrivant fidèlement l'expérience sensorielle du lieu avant même d'y entrer.",
     },
   },
 ];
