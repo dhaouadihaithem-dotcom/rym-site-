@@ -57,6 +57,37 @@ export const projects: Project[] = [
     summary:
       "Un listening bar confidentiel à Paris. L'enjeu : faire ressentir l'atmosphère du lieu en ligne, avant même d'y entrer.",
     liveUrl: "https://www.noahifi.com/",
+    image: "/travaux/noa-hifi/hero.png",
+    gallery: [
+      {
+        src: "/travaux/noa-hifi/manifesto.png",
+        caption: "Manifesto — l'histoire et la philosophie du lieu",
+      },
+      {
+        src: "/travaux/noa-hifi/rituals.png",
+        caption: "Three rituals — Sound, Taste, Design",
+      },
+      {
+        src: "/travaux/noa-hifi/amplifier-detail.png",
+        caption: "Détail — amplificateur McIntosh et vinylothèque",
+      },
+      {
+        src: "/travaux/noa-hifi/space.png",
+        caption: "The Space — l'espace sculpté par le son",
+      },
+      {
+        src: "/travaux/noa-hifi/now-playing.png",
+        caption: "Now Playing — platine animée et playlist en direct",
+      },
+      {
+        src: "/travaux/noa-hifi/liquid-art.png",
+        caption: "Liquid Art — la carte de cocktails",
+      },
+      {
+        src: "/travaux/noa-hifi/reserve.png",
+        caption: "Reserve — réservation confidentielle",
+      },
+    ],
     caseStudy: {
       tagline: "Hi-Fi Speakeasy — Paris",
       context:

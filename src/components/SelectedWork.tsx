@@ -49,7 +49,7 @@ export default function SelectedWork() {
             {thumbnails.map((item) => (
               <div
                 key={item.src}
-                className="relative aspect-[4/3] overflow-hidden bg-ink"
+                className="relative aspect-[16/10] overflow-hidden bg-ink"
               >
                 <Image
                   src={item.src}

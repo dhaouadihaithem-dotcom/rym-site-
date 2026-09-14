@@ -108,7 +108,7 @@ export default async function ProjectPage({
               : [0, 1].map((i) => ({ src: "", caption: `${project.client} ${i + 1}` }))
             ).map((item, i) => (
               <Reveal key={item.src || item.caption} delay={i * 0.06}>
-                <div className="relative aspect-[4/3] w-full overflow-hidden bg-ink">
+                <div className="relative aspect-[16/10] w-full overflow-hidden bg-ink">
                   {item.src ? (
                     <Image
                       src={item.src}
